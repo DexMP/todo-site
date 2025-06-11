@@ -1,0 +1,130 @@
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for Theming */
+:root {
+  --color-background: #ffffff; /* white */
+  --color-text-primary: #1f2937; /* gray-800 */
+  --color-text-secondary: #4b5563; /* gray-600 */
+  --color-primary-accent: #3b82f6; /* blue-500 */
+  --color-secondary-accent: #10b981; /* emerald-500 */
+  --color-card-background: #f9fafb; /* gray-50 */
+  --color-border-color: #e5e7eb; /* gray-200 */
+  --color-danger: #ef4444; /* red-500 */
+  --color-warning: #f97316; /* orange-500 */
+  --color-success: #22c55e; /* green-500 */
+
+  /* Input specific variables for better control if needed */
+  --input-background: #ffffff;
+  --input-border-color: #d1d5db; /* gray-300 */
+  --input-text-color: #1f2937;
+  --input-focus-border-color: var(--color-primary-accent);
+
+  /* Button specific variables */
+  --button-primary-bg: var(--color-primary-accent);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: var(--color-secondary-accent);
+  --button-secondary-text: #ffffff;
+  --button-danger-bg: var(--color-danger);
+  --button-danger-text: #ffffff;
+}
+
+.dark {
+  --color-background: #111827; /* gray-900 */
+  --color-text-primary: #f3f4f6; /* gray-100 */
+  --color-text-secondary: #9ca3af; /* gray-400 */
+  --color-primary-accent: #60a5fa; /* blue-400 */
+  --color-secondary-accent: #34d399; /* emerald-400 */
+  --color-card-background: #1f2937; /* gray-800 */
+  --color-border-color: #374151; /* gray-700 */
+  --color-danger: #f87171; /* red-400 */
+  --color-warning: #fb923c; /* orange-400 */
+  --color-success: #4ade80; /* green-400 */
+
+  /* Dark theme input variables */
+  --input-background: #374151; /* gray-700 */
+  --input-border-color: #4b5563; /* gray-600 */
+  --input-text-color: #f3f4f6;
+  --input-focus-border-color: var(--color-primary-accent);
+
+  /* Dark theme button variables */
+  --button-primary-bg: var(--color-primary-accent);
+  --button-primary-text: #111827; /* Use a dark text for light blue button */
+  --button-secondary-bg: var(--color-secondary-accent);
+  --button-secondary-text: #111827;
+  --button-danger-bg: var(--color-danger);
+  --button-danger-text: #ffffff;
+}
+
+/* Apply a base background color and text color to the body for the theme to take effect */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+/* Basic styling for react-datepicker in dark mode */
+.dark .react-datepicker {
+  background-color: var(--color-card-background);
+  border-color: var(--color-border-color);
+  color: var(--color-text-primary);
+}
+.dark .react-datepicker__header {
+  background-color: var(--color-card-background);
+  border-bottom-color: var(--color-border-color);
+}
+.dark .react-datepicker__current-month,
+.dark .react-datepicker-time__header,
+.dark .react-datepicker-year-header {
+  color: var(--color-text-primary);
+}
+.dark .react-datepicker__day-name,
+.dark .react-datepicker__day,
+.dark .react-datepicker__time-name {
+  color: var(--color-text-primary);
+}
+.dark .react-datepicker__day:hover,
+.dark .react-datepicker__month-text:hover,
+.dark .react-datepicker__quarter-text:hover,
+.dark .react-datepicker__year-text:hover {
+  background-color: var(--color-primary-accent);
+  color: var(--button-primary-text);
+}
+.dark .react-datepicker__day--selected,
+.dark .react-datepicker__day--in-selecting-range,
+.dark .react-datepicker__day--in-range,
+.dark .react-datepicker__month-text--selected,
+.dark .react-datepicker__month-text--in-selecting-range,
+.dark .react-datepicker__month-text--in-range,
+.dark .react-datepicker__quarter-text--selected,
+.dark .react-datepicker__quarter-text--in-selecting-range,
+.dark .react-datepicker__quarter-text--in-range,
+.dark .react-datepicker__year-text--selected,
+.dark .react-datepicker__year-text--in-selecting-range,
+.dark .react-datepicker__year-text--in-range {
+  background-color: var(--color-primary-accent);
+  color: var(--button-primary-text);
+}
+.dark .react-datepicker__day--keyboard-selected,
+.dark .react-datepicker__month-text--keyboard-selected,
+.dark .react-datepicker__quarter-text--keyboard-selected,
+.dark .react-datepicker__year-text--keyboard-selected {
+  background-color: var(--color-primary-accent);
+  color: var(--button-primary-text);
+}
+.dark .react-datepicker__input-container input {
+    background-color: var(--input-background);
+    border-color: var(--input-border-color);
+    color: var(--input-text-color);
+}
+.dark .react-datepicker__triangle::before, .dark .react-datepicker__triangle::after {
+    border-bottom-color: var(--color-card-background) !important; /* Needs to be important to override inline styles */
+}
+/* Add more specific overrides for react-datepicker components if needed */
